@@ -1,5 +1,5 @@
 ---
-- hosts: webservers
+- hosts: all
   become: yes
   tasks: 
   - name: install webserver on ubuntu16
