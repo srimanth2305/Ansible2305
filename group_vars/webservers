@@ -1,2 +1,5 @@
 webserveronubuntu: apache2
 webserveronRedHat: httpd
+
+javaonubuntu: openjdk-8-jre
+javaonRedHat: java-1.8.0-openjdk
