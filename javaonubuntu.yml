@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Add repository
+    apt:
+     name: ppa:webupd8team/java
+     update_cache: yes
+  - name: update all packages
+    apt:
+     upgrade: dist
+  - name : install java
+    apt:
+     name: oracle-java7-installer
+     state: present
+    when: ansible_os_family =="Debian"
+
+
+ 
