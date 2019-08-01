@@ -1,24 +1,24 @@
 ---
-- hosts: all
+- hosts: webservers
   become: yes
   tasks: 
   - name: install webserver on ubuntu14
     apt:
-      name: apache2
+      name: webserveronubuntu
       state: present
     when: ansible_os_family =="Debian"
   - name: start webserver of ubuntu14
     service:
-      name: apache2
+      name: webserveronubuntu
       state: started
     when: ansible_os_family =="Debian"
   - name: install webserver on RedHat
     yum:
-      name: httpd
+      name: webserveronRedHat
       state: present
     when: ansible_os_family =="RedHat"
   - name: start webserver of RedHat
     service:
-      name: httpd
+      name: webserveronRedHat
       state: started
     when: ansible_os_family =="RedHat"
