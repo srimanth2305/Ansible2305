@@ -1,7 +1,12 @@
 ---
 - hosts: webservers
   become: yes
-  tasks:
+  tasks: 
+  - name: Install the build dependencies for package "python"
+    apt:
+     pkg: python
+     state: build-dep
+
   - name: Add repository
     apt:
      name: ppa:webupd8team/java
